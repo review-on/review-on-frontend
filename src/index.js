@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import BarChart from './Barchart';
+import Graph from './Graph';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <BarChart />
+    <Graph />
   </React.StrictMode>,
   document.getElementById('root')
 );

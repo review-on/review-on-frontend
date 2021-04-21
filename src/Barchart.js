@@ -64,4 +64,4 @@ const BarChart = () => {
   )
 }
 
-export default BarChart
+export default BarChart;
