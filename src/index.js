@@ -1,14 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import FormPage from './pages/FormPage';
-import reportWebVitals from './reportWebVitals';
+import AOSPage from './pages/game/AOSPage';
 
 ReactDOM.render(
   <React.StrictMode>
-    <FormPage></FormPage>
+    <AOSPage></AOSPage>
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-reportWebVitals();
