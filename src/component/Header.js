@@ -9,12 +9,16 @@ const Header = (props) => {
         props.changeMod();
     }
 
+    const moveSideBar = e => {
+        props.moveSideBar();
+    }
+
     useEffect(() => {
     });
     
     return(
         <header className={ mod == "dark" ? "flex-between dark" : "flex-between white"}>
-            <div className={ mod == "dark" ? "dark_hamburger hamburger" : "white_hamburger hamburger"}>
+            <div onClick={moveSideBar} className={ mod == "dark" ? "dark_hamburger hamburger" : "white_hamburger hamburger"}>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -54,6 +58,7 @@ const Header = (props) => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" viewBox="0 0 33.237 26.715">
                     <path id="패스_106" data-name="패스 106" d="M2.952,11.356a59.4,59.4,0,0,0,.216,14.509A5.555,5.555,0,0,0,8.18,30.573l2.673.232a96.7,96.7,0,0,0,16.753,0l2.673-.232a5.554,5.554,0,0,0,5.011-4.708,59.4,59.4,0,0,0,.216-14.509q-.1-.8-.216-1.6a5.554,5.554,0,0,0-5.011-4.708l-2.673-.232a96.724,96.724,0,0,0-16.753,0L8.18,5.049A5.554,5.554,0,0,0,3.168,9.757Q3.048,10.555,2.952,11.356Zm8.131-3.895a94.066,94.066,0,0,1,16.293,0l2.673.232a2.9,2.9,0,0,1,2.616,2.457q.031.206.06.413l-9.843,5.468a7.522,7.522,0,0,1-7.306,0L5.733,10.564q.029-.207.06-.413A2.9,2.9,0,0,1,8.41,7.694ZM33.05,13.421a51.5,51.5,0,0,1-.385,12.049,2.9,2.9,0,0,1-2.616,2.457l-2.673.232a94.078,94.078,0,0,1-16.293,0L8.41,27.928A2.9,2.9,0,0,1,5.794,25.47a51.507,51.507,0,0,1-.385-12.049l8.878,4.932a10.177,10.177,0,0,0,9.885,0Z" transform="translate(-2.611 -4.453)" fill={mod == "dark" ? "#fff" : "#1c1c1c"} fill-rule="evenodd"/>
                 </svg>
+                <div className="profile"></div>
             </div>
         </header>
        

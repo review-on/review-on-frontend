@@ -49,7 +49,7 @@ header {
     outline: none;
 }
 .dark_search {
-    color: #707070;
+    color: #d8d8d8;
     border: 1px solid #707070;
 }
 .dark_search::placeholder { color: #d8d8d8; }
@@ -58,3 +58,14 @@ header {
     border: 1px solid #1c1c1c;
 }
 .white_search::placeholder { color: #1c1c1c; }
+
+.profile { 
+    width: 35px; 
+    height: 35px;
+    background-color: #fff;
+
+    border: 1px solid #1c1c1c;
+    border-radius: 50%;
+
+    margin-left: 25px;
+}
