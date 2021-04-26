@@ -1,7 +1,7 @@
-import { render } from '@testing-library/react';
 import React, { useEffect, useState } from 'react';
 import Header from '../../component/Header';
 import SideBar from '../../component/SideBar';
+import Content from '../../component/Content';
 
 
 const AOSPage = () => {
@@ -9,11 +9,11 @@ const AOSPage = () => {
     const [status, setStatus] = useState("open");
     
     const changeMod = () => {
-        setMod(mod == "dark" ? "white" : "dark");
+        setMod(mod === "dark" ? "white" : "dark");
     }
 
     const moveSideBar = () => {
-        setStatus(status == "open" ? "close" : "open");
+        setStatus(status === "open" ? "close" : "open");
     }
     
     useEffect(() => {
@@ -23,6 +23,7 @@ const AOSPage = () => {
        <div>
            <Header mod={mod} changeMod={changeMod} moveSideBar={moveSideBar}/>
            <SideBar mod={mod} status={status} />
+           <Content mod={mod} status={status} />
        </div>
     )
 };

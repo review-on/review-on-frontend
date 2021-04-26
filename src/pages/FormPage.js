@@ -8,7 +8,7 @@ const FormPage = () => {
     
     useEffect(() => {
         let screen = document.querySelector(".screen");
-        if(status == "로그인") {
+        if(status === "로그인") {
             screen.style.left = "50%";
         } else {
             screen.style.left = "0%";
@@ -17,9 +17,9 @@ const FormPage = () => {
     
     return(
         <div>
-            {/* <button onClick = {() => setStatus(status == "login" ? "join" : "login")}>아무거나</button> */}
+            {/* <button onClick = {() => setStatus(status === "login" ? "join" : "login")}>아무거나</button> */}
             <div className="screen flex-center">
-            <button onClick = {() => setStatus(status == "로그인" ? "회원가입" : "로그인")}>{status}</button>
+            <button onClick = {() => setStatus(status === "로그인" ? "회원가입" : "로그인")}>{status}</button>
             </div>
             <div className="content">
                 <div className="join flex-col-center">

@@ -1,6 +1,9 @@
-
 header {
+    width: 100%;
     height: 70px;
+
+    position: fixed;
+    z-index: 1000;
 
     padding: 0 40px;
 }
@@ -26,7 +29,7 @@ header {
 }
 .hamburger > span:nth-child(1) { margin-top : 2px; }
 .dark_hamburger > span { border-top: 1px solid #fff; }
-.white_hamburger > span{ border-top: 1px solid #1c1c1c; }
+.white_hamburger > span{ border-top: 1px solid #1E2025; }
 
 .utility > svg { margin-left: 25px; }
 
@@ -54,17 +57,17 @@ header {
 }
 .dark_search::placeholder { color: #d8d8d8; }
 .white_search {
-    color: #1c1c1c;
-    border: 1px solid #1c1c1c;
+    color: #1E2025;
+    border: 1px solid #1E2025;
 }
-.white_search::placeholder { color: #1c1c1c; }
+.white_search::placeholder { color: #1E2025; }
 
 .profile { 
     width: 35px; 
     height: 35px;
     background-color: #fff;
 
-    border: 1px solid #1c1c1c;
+    border: 1px solid #1E2025;
     border-radius: 50%;
 
     margin-left: 25px;

@@ -8,7 +8,7 @@
     transition: 1s;
 }
 
-.dark {background-color: #1c1c1c;}
+.dark {background-color: #1E2025;}
 .white {background-color: #fff;}
 
 label, a, button { user-select: none; }
@@ -42,7 +42,7 @@ p { margin-bottom: 0; line-height: 1.7em; }
 .fs-6 { font-size: 1.6em; }
 .fs-7 { font-size: 2em; }
 .fs-8 { font-size: 2.3em; }
-.fs-9 { font-size: 2.5em; }
+.fs-9 { font-size: 3.5em; }
 
 .bold { font-weight: bold; }
 .lighter { font-weight: lighter; }
@@ -73,7 +73,7 @@ p { margin-bottom: 0; line-height: 1.7em; }
 .pos-center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
 .background { background-repeat: no-repeat; background-size: cover; }
 .image { width: 100%; height: 100%; object-fit: cover; }
-.background-image { width: 100%; height: 100%; position: absolute; object-fit: cover; filter: brightness(50%); }
+.background-image { width: 100%; height: 100%; position: absolute; object-fit: cover; }
 
 .card { border-radius: 10px !important; cursor: pointer; }
 .card-header { border-radius: 10px 10px 0 0 !important; overflow: hidden; }
