@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Background from '../images/aosBackground.png';
+import DarkModeBackground from '../images/aosBackground.png';
+import WhiteModeBackground from '../images/aosBackground2.png';
 import '../style/content.css'
 import PopularPosts from './PopularPosts';
 import Multiplex from './Multiplex';
@@ -17,7 +18,7 @@ const Content = (props) => {
     
     return(
         <div className={mod === "dark" ? "dark visual" : "white visual"}>
-            <img src={Background} className="background-image" alt="background"/>
+            <img src={mod === "dark" ? DarkModeBackground : WhiteModeBackground } className="background-image" alt="background"/>
             <div className="content-filter"></div>
             <div className="background-text bold fs-9">
                 <span>AOS 세계로</span><br/>

@@ -61,6 +61,7 @@ header {
     border: 1px solid #1E2025;
 }
 .white_search::placeholder { color: #1E2025; }
+.white_modicon { background-color: #1E2025; }
 
 .profile { 
     width: 35px; 

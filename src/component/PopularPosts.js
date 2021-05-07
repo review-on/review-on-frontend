@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import '../style/content.css'
 
 const PopularPosts = (props) => {
+    const mod = props.mod; 
+    console.log(mod); 
+    
     return(
-        <div className="popular">
-            <div className="flex-between px-3">
+        <div className={ mod === "dark" ? "popular darkP" : "popular whiteP" }>
+            <div className="flex-between px-3 fa-inverse">
                 <h5 className="bold">추천하는 글</h5>
                 <a className="bold" href="#">더보기</a>
             </div>
@@ -40,7 +44,7 @@ const PopularPosts = (props) => {
                 </div>
                 <div className="col-lg-3">
                     <div className="box">
-                        
+   
                     </div>
                     <div className="px-2">
                         <p className="py-2">안녕하세요</p>

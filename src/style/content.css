@@ -46,9 +46,9 @@
     margin: 0 auto;
     padding-top: 450px;
 }
-.popular { 
-    color: #fff; 
-}
+.darkP { color: #fff; }
+.whiteP { color: #333; }
+
 .popular .box {
     height: 220px;
     background-color: #1E2025;
