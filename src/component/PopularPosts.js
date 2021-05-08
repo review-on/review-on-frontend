@@ -36,7 +36,7 @@ const PopularPosts = (props) => {
                         <div className="popular-content flex-between">
                             <div className="d-flex">
                                 <div className="profile-image"></div>
-                                <p className="ml-3"><span>황성철</span><br/>집가고싶다</p>
+                                <p className="ml-3"><span>김은아</span><br/>집가고싶다</p>
                             </div>
                             <div className="submit mt-1">구독</div>
                         </div>
@@ -63,9 +63,9 @@ const PopularPosts = (props) => {
                     <div className="px-2">
                         <p className="py-2">안녕하세요</p>
                         <div className="popular-content flex-between">
-                            <div className="d-flex">
+                            <div className="d-flex">00sd\p9 
                                 <div className="profile-image"></div>
-                                <p className="ml-3"><span>황성철</span><br/>집가고싶다</p>
+                                <p className="ml-3"><span>김은아</span><br/>집가고싶다</p>
                             </div>
                             <div className="submit mt-1">구독</div>
                         </div>
