@@ -18,7 +18,7 @@ const Content = (props) => {
     
     return(
         <div className={mod === "dark" ? "dark visual" : "white visual"}>
-            <img src={mod === "dark" ? DarkModeBackground : WhiteModeBackground } className="background-image" alt="background"/>
+            <div className="background-image background"></div>
             <div className="content-filter"></div>
             <div className="background-text bold fs-9">
                 <span>AOS 세계로</span><br/>
@@ -27,8 +27,8 @@ const Content = (props) => {
             <div className="content">
                 <PopularPosts />
                 <div className="row pt-5 mt-4">
-                    <Multiplex mod={mod}/>
-                    <ReviewRank mod={mod}/>
+                    <Multiplex />
+                    <ReviewRank />
                 </div>
             </div>
         </div>

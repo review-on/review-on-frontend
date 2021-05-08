@@ -5,6 +5,13 @@
     left: 250px; top: 70px; 
 }
 .visual.dark { background-color: #000 !important; }
+.visual.dark > .background-image { 
+    background-image: url(../images/aosBackground.png);
+    background-position: center -100px;
+}
+.visual.white > .background-image { 
+    background-image: url(../images/aosBackground2.png);
+}
 .visual .background-image {
     width: 100%;
     height: 850px;
@@ -13,45 +20,46 @@
 }
 .visual::before, .visual::after {
     width: 100%; 
-    height: 100px;
+    height: 200px;
 
     position: absolute;
-    left: 0; top: 750px;
+    left: 0; top: 650px;
     z-index: 100;
     transition: opacity 1s ease-out !important;
 
     opacity: 0;
     content: '';
 }
-.visul.dark::before { opacity: 1; background: linear-gradient(to bottom, rgba(51, 51, 51, 0) 0%, rgb(0, 0, 0) 100%); }
+.visual.dark::before { opacity: 1; background: linear-gradient(to bottom, rgba(51, 51, 51, 0) 0%, rgb(0, 0, 0) 100%); }
 .visual.white::after { opacity: 1; background: linear-gradient(to bottom, rgba(139, 139, 139, 0) 0%, rgb(255, 255, 255) 100%); }
 .type_open { left: 250px; }
 .type_close { width: 100vw; left: 0; }
 
 .background-text {
-    color: #fff;
     line-height: 80px;
 
     position: absolute;
     left: 10%; top: 200px;
     z-index: 100;
 }
+.background-text > span { color: #fff !important; }
 
 .content {
     width: 80%;
 
     position: relative;
-    z-index: 100;
+    z-index: 300;
 
     margin: 0 auto;
     padding-top: 450px;
 }
-.darkP { color: #fff; }
-.whiteP { color: #333; }
 
 .popular .box {
-    height: 220px;
+    height: 250px;
     background-color: #1E2025;
+    
+    position: relative;
+    z-index: 200;
 
     border-radius: 20px;
 }
@@ -77,22 +85,12 @@
     border-radius: 20px;
 }
 .multi { width: 850px; margin-right: 80px; }
-.multi.dark { 
-    background-color: #000 !important; 
-    color: #fff;
-}
-.multi.white { color: #000; }
 
 .reviewRank { font-weight: bold; }
-.reviewRank.dark { 
-    background-color: #000 !important; 
-}
-.reviewRank.dark * { color: #fff; }
-.reviewRank.white * { color: #000; }
-.reviewRank.dark > .review-background {
+.dark .review-background {
     background-color: #1E2025;
 }
-.reviewRank.white > .review-background {
+.white .review-background {
     background-color: #f7f7f7;
 }
 .review-item > img {
@@ -102,11 +100,6 @@
     border-radius: 50%;
     margin: 10px 20px;
 }
-.review-item.dark { 
-    background-color: #000 !important; 
-    color: #fff;
-}
-.review-item.white { color: #000; }
 .review-background {
     border-radius: 15px;
     padding: 35px 30px;

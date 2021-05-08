@@ -8,11 +8,9 @@ import img6 from '../images/gameImage6.png';
 import img7 from '../images/gameImage7.png';
 import img8 from '../images/gameImage8.png';
 
-const ReviewRank = (props) => {
-    const mod = props.mod; 
-
+const ReviewRank = () => {
     return(
-        <div className={mod === "dark" ? "dark reviewRank col-lg-3" : "white reviewRank col-lg-3"}>
+        <div className="reviewRank col-lg-3">
             <div className="flex-between px-3">
                 <h5 className="bold">리뷰 순위</h5>
             </div>            

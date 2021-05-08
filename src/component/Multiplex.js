@@ -8,11 +8,10 @@ import img6 from '../images/gameImage6.png';
 import img7 from '../images/gameImage7.png';
 import img8 from '../images/gameImage8.png';
 
-const Multiplex = (props) => {
-    const mod = props.mod; 
+const Multiplex = () => {
 
     return(
-        <div className={mod === "dark" ? "dark multi col-lg-8" : "white multi col-lg-8"}>
+        <div className="multi col-lg-8">
             <h5 className="bold">다양한 게임</h5>
             <div className="row mt-4">
                 <div className="col-lg-3 col-md-6 mb-4">
