@@ -27,8 +27,8 @@ const Header = (props) => {
                  <input className={mod === "dark" ? "dark_search search dark" : "white_search search white"} type="text" placeholder="검색어를 입력해주세요"/>
             </div>
             <div className="utility flex-center">
-                <div className={mod === "dark" ? "mod_btn flex-center dark_modicon" : "mod_btn flex-center white_modicon"} onClick={changeMod}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="21.5" height="21.5" viewBox="0 0 21.5 21.5">
+                <div className="mod_btn flex-center" onClick={changeMod}>
+                    <svg className="sun" xmlns="http://www.w3.org/2000/svg" width="21.5" height="21.5" viewBox="0 0 21.5 21.5">
                         <g id="그룹_59" data-name="그룹 59" transform="translate(-1.25 -1.25)">
                             <path id="패스_200" data-name="패스 200" d="M12,1.25a.75.75,0,0,1,.75.75V3a.75.75,0,0,1-1.5,0V2A.75.75,0,0,1,12,1.25Z" fill="#fff"/>
                             <path id="패스_201" data-name="패스 201" d="M6.25,12A5.75,5.75,0,1,1,12,17.75,5.75,5.75,0,0,1,6.25,12ZM12,7.75A4.25,4.25,0,1,0,16.25,12,4.25,4.25,0,0,0,12,7.75Z" fill="#fff" fill-rule="evenodd"/>
@@ -40,6 +40,9 @@ const Header = (props) => {
                             <path id="패스_207" data-name="패스 207" d="M3.75,12a.75.75,0,0,1-.75.75H2a.75.75,0,0,1,0-1.5H3A.75.75,0,0,1,3.75,12Z" fill="#fff"/>
                             <path id="패스_208" data-name="패스 208" d="M6.166,18.894a.75.75,0,0,0-1.061-1.061l-.707.707A.75.75,0,0,0,5.459,19.6Z" fill="#fff"/>
                         </g>
+                    </svg>
+                    <svg className="moon" xmlns="http://www.w3.org/2000/svg" width="17.463" height="17.5" viewBox="0 0 17.463 17.5">
+                        <path id="패스_3" data-name="패스 3" d="M11.486,4.768a7.25,7.25,0,1,0,7.4,9.511,6.251,6.251,0,0,1-7.4-9.511ZM3.25,12A8.757,8.757,0,0,1,13.324,3.35a.75.75,0,0,1,.336,1.342,4.75,4.75,0,1,0,5.83,7.5.75.75,0,0,1,1.219.654A8.75,8.75,0,0,1,3.25,12Z" transform="translate(-3.25 -3.25)" fill="#fff" fill-rule="evenodd"/>
                     </svg>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" width="25" height="25" viewBox="0 0 33 33">

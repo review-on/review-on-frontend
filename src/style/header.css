@@ -36,10 +36,19 @@ header {
 .mod_btn {
     width: 40px;
     height: 40px;
-    
+    background-color: #E99A11;
+
+    position: relative;
+
     border-radius: 15px;
     cursor: pointer;
 }
+.sun, .moon { 
+    position: absolute;
+    opacity: 0; 
+}
+.dark .sun { opacity: 1; }
+.white .moon { opacity: 1; }
 
 .search-form svg{ transform: translateX(33px); cursor: pointer;}
 .search {
@@ -60,9 +69,6 @@ header {
     border: 1px solid #1E2025;
 }
 .white_search::placeholder { color: #1E2025; }
-
-.dark_modicon { background-color: #E99A11; }
-.white_modicon { background-color: #1E2025; }
 
 .profile { 
     width: 35px; 
