@@ -104,3 +104,20 @@
     border-radius: 15px;
     padding: 35px 30px;
 }
+.review-tag > span { position: relative; }
+.review-tag > span::before {
+    width: 0%;
+    height: 2.5px;
+
+    position: absolute;
+    left: 50%; bottom: -30%;
+    transition: .5s;
+
+    content: '';
+}
+.review-sort::before {
+    width: 90% !important;
+    background-color: #E99A11;
+
+    left: 5% !important;
+}

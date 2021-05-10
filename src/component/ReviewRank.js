@@ -8,7 +8,6 @@ import img6 from '../images/gameImage6.png';
 import img7 from '../images/gameImage7.png';
 import img8 from '../images/gameImage8.png';
 
-
 const ReviewRank = () => {
     const hits = ["리그오브레전드", "난투", "안녕하세요", "도타3", "히어로즈 오브 더 스톤", "빵야", "모바일 레전드", "와일드 리프트"];
     const hitsImg = [img1, img2, img3, img4, img5, img6, img7, img8];
@@ -16,11 +15,12 @@ const ReviewRank = () => {
     const upImg = [img1, img4, img5, img7, img8, img2, img6, img3];
 
     const [sort, setSort] = useState(hits);
+    const [sortName, setSortName] = useState("hits");
     
     const listItem = sort.map((name, i) =>
         <div className="review-item d-flex align-items-center">
             <span className="fs-3">{i + 1}</span>
-            <img src={hitsImg[i]} alt="itemImage"/>
+            <img src={sortName === "hits" ? hitsImg[i] : upImg[i]} alt="itemImage"/>
             <span>{name}</span>
         </div>
     );
@@ -29,7 +29,10 @@ const ReviewRank = () => {
         <div className="reviewRank col-lg-3">
             <div className="flex-between px-3">
                 <h5 className="bold">리뷰 순위</h5>
-                <div></div>
+                <div className="review-tag cursor">
+                    <span className={sortName === "hits" ? "px-1 fs-n3 review-sort" : "px-1 fs-n3"} onClick={() => { setSort(hits);  setSortName("hits") }}>조회수</span>
+                    <span className={sortName === "up" ? "px-1 fs-n3 review-sort" : "px-1 fs-n3"} onClick={() => { setSort(up);  setSortName("up") }}>좋아요</span>
+                </div>
             </div>            
             <div className="review-background mt-3">
                 {listItem}
