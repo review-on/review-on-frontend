@@ -8,54 +8,31 @@ import img6 from '../images/gameImage6.png';
 import img7 from '../images/gameImage7.png';
 import img8 from '../images/gameImage8.png';
 
+
 const ReviewRank = () => {
+    const hits = ["리그오브레전드", "난투", "안녕하세요", "도타3", "히어로즈 오브 더 스톤", "빵야", "모바일 레전드", "와일드 리프트"];
+    const hitsImg = [img1, img2, img3, img4, img5, img6, img7, img8];
+    const up = ["리그오브레전드", "도타3", "히어로즈 오브 더 스톤", "모바일 레전드", "와일드 리프트", "난투", "빵야",  "안녕하세요"];
+    const upImg = [img1, img4, img5, img7, img8, img2, img6, img3];
+
+    const [sort, setSort] = useState(hits);
+    
+    const listItem = sort.map((name, i) =>
+        <div className="review-item d-flex align-items-center">
+            <span className="fs-3">{i + 1}</span>
+            <img src={hitsImg[i]} alt="itemImage"/>
+            <span>{name}</span>
+        </div>
+    );
+
     return(
         <div className="reviewRank col-lg-3">
             <div className="flex-between px-3">
                 <h5 className="bold">리뷰 순위</h5>
+                <div></div>
             </div>            
             <div className="review-background mt-3">
-                <div className="review-item d-flex align-items-center">
-                    <span className="fs-3">1</span>
-                    <img src={img1} alt="itemImage"/>
-                    <span>리그오브레전드</span>
-                </div>
-                <div className="review-item d-flex align-items-center">
-                    <span className="fs-3">2</span>
-                    <img src={img2} alt="itemImage"/>
-                    <span>난투</span>
-                </div>
-                <div className="review-item d-flex align-items-center">
-                    <span className="fs-3">3</span>
-                    <img src={img3} alt="itemImage"/>
-                    <span>안녕하세요</span>
-                </div>
-                <div className="review-item d-flex align-items-center">
-                    <span className="fs-3">4</span>
-                    <img src={img4} alt="itemImage"/>
-                    <span>도타3</span>
-                </div>
-                <div className="review-item d-flex align-items-center">
-                    <span className="fs-3">5</span>
-                    <img src={img5} alt="itemImage"/>
-                    <span>히어로즈 오브 더 스톤</span>
-                </div>
-                <div className="review-item d-flex align-items-center">
-                    <span className="fs-3">6</span>
-                    <img src={img6} alt="itemImage"/>
-                    <span>빵야</span>
-                </div>
-                <div className="review-item d-flex align-items-center">
-                    <span className="fs-3">7</span>
-                    <img src={img7} alt="itemImage"/>
-                    <span>모바일 레전드</span>
-                </div>
-                <div className="review-item d-flex align-items-center">
-                    <span className="fs-3">8</span>
-                    <img src={img8} alt="itemImage"/>
-                    <span>와일드 리프트</span>
-                </div>
-
+                {listItem}
             </div>
         </div>
     )
