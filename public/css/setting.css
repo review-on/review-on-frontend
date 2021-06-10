@@ -10,8 +10,8 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-.dark {background-color: #1E2025; }
-.white {background-color: #fff; }
+.dark { background-color: #1E2025; }
+.white { background-color: #fff; }
 .dark * { color: #fff; }
 .white * { color: #333; }
 

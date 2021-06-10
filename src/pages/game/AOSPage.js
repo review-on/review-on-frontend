@@ -3,7 +3,6 @@ import Header from '../../component/Header';
 import SideBar from '../../component/SideBar';
 import Content from '../../component/Content';
 
-
 const AOSPage = () => {
     const [mod, setMod] = useState("dark");
     const [status, setStatus] = useState("open");
