@@ -10,6 +10,8 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+svg { transition: .5s !important; }
+
 .dark { background-color: #1E2025; }
 .white { background-color: #fff; }
 .dark * { color: #fff; }

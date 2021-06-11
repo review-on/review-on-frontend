@@ -80,6 +80,11 @@ const Utility = styled.div `
 
     & > svg {
         margin-left: 25px;
+        
+    }
+    
+    & > svg path {
+       fill: ${(props) => (props.mod == "dark" ? "#fff" : "#1E2025")};
     }
 `
 
@@ -149,11 +154,12 @@ const Header = (props) => {
                     <SunIcon/>
                     <MoonIcon/>
                 </ModButtonWrap>
-                <BallIcon fill={mod == "dark" ? "#fff" : "#1E2025"} />
-                <MessageIcon fill={mod == "dark" ? "#fff" : "#1E2025"} />
+                <BallIcon />
+                <MessageIcon />
                 <Profile />
             </Utility>
         </Container>
     ) 
 };
+
 export default Header;
