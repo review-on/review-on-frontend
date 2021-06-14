@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import '../style/content.css'
+import React from 'react';
 
 const PopularPosts = () => {
     return(
         <div className="popular pr-5">
             <div className="flex-between px-3">
                 <h5 className="bold text-white">추천하는 글</h5>
-                <a className="bold text-white" href="#">더보기</a>
+                <a className="bold text-white" href="/">더보기</a>
             </div>
             <div className="row bold mt-2">
                 <div className="col-lg-3">

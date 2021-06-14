@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import PopularPosts from './PopularPosts';
 import Multiplex from './Multiplex';
 import ReviewRank from './ReviewRank';
 
-const Container = styled.div `
+import blackBackground from '../images/aosBackground.png';
+import whiteBackground from '../images/aosBackground2.png';
+
+const Container = styled.div`
     width: calc(100vw - 250px);
-    background-color: ${(props) => (props.mod === "dark" ? "#1E2025" : "#fff")};
+    background-color: ${(props) => (props.mod === "dark" ? "#000" : "#fff")};
 
     position: relative;
     left: 250px; top: 70px; 
@@ -20,38 +23,46 @@ const Container = styled.div `
         z-index: 100;
         transition: opacity 1s ease-out !important;
 
-        opacity: 0;
         content: '';
     }
 
     ::before {
-        
+        opacity: ${(props)  => (props.mod === "dark" ? 1 : 0)};
+        background: linear-gradient(to bottom, rgba(51, 51, 51, 0) 0%, rgb(0, 0, 0) 100%);
+    }
+
+    ::after {
+        opacity: ${(props) => (props.mod === "white" ? 1 : 0)};
+        background: linear-gradient(to bottom, rgba(139, 139, 139, 0) 0%, rgb(255, 255, 255) 100%);
     }
 `
 
-const BackgroundImage = styled.div `
-    background-image: ${(props) => (props.mod === "dark" ? "url(/images/aosBackground.png)" : "url(/images/aosBackground2.png)")};
-    background-position: center -100px;
+const BackgroundImage = styled.div`
+    width: 100%;
+    height: 850px;
+
+    background-image: url(${props => props.mod === 'dark' ? blackBackground : whiteBackground});
+    background-position: ${props => props.mod === 'dark' ? "center -100px" : ""};
     background-repeat: no-repeat;
     background-size: cover;
 `
 
 const Content = (props) => {
-    const mod = props.mod; 
+    const mod = props.mod;
     const status = props.status;
-    
+
     useEffect(() => {
         let visual = document.querySelector(".visual");
         visual.classList.remove("type_open", "type_close");
         visual.classList.add(`type_${status}`);
     });
-    
-    return(
-        <Container>
-            <BackgroundImage />
+
+    return (
+        <Container mod={mod} className="visual">
+            <BackgroundImage mod={mod} />
             <div className="content-filter"></div>
             <div className="background-text bold fs-9">
-                <span>AOS 세계로</span><br/>
+                <span>AOS 세계로</span><br />
                 <span>탐험을 떠나자</span>
             </div>
             <div className="content">
