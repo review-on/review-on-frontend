@@ -19,11 +19,11 @@ const AOSPage = () => {
     });
     
     return(
-       <div>
+       <>
            <Header mod={mod} changeMod={changeMod} moveSideBar={moveSideBar}/>
            <SideBar mod={mod} status={status} />
            <Content mod={mod} status={status} />
-       </div>
+       </>
     )
 };
 

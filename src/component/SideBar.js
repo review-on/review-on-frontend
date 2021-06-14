@@ -8,7 +8,7 @@ import GameIcon from '../svg/GameIcon';
 const Container = styled.aside `
     width: 250px;
     height: 100vh;
-    background-color: ${(props) => (props.mod == "dark" ? "#1E2025" : "#fff")};
+    background-color: ${(props) => (props.mod === "dark" ? "#1E2025" : "#fff")};
 
     display: flex;
     justify-content: center;
@@ -19,19 +19,19 @@ const Container = styled.aside `
     padding-top: 50px;
 
     & a {
-        color: ${(props) => (props.mod == "dark" ? "#fff" : "#1E2025")};
+        color: ${(props) => (props.mod === "dark" ? "#fff" : "#1E2025")};
     }
     
     & i {
-        color: ${(props) => (props.mod == "dark" ? "#fff" : "#1E2025")};
+        color: ${(props) => (props.mod === "dark" ? "#fff" : "#1E2025")};
     }
 
     & .sub {
-        border-left: 3px solid ${(props) => (props.mod == "dark" ? "#fff" : "#1E2025")};
+        border-left: 3px solid ${(props) => (props.mod === "dark" ? "#fff" : "#1E2025")};
     }
 
     & svg path {
-        fill: ${(props) => (props.mod == "dark" ? "#fff" : "#1E2025")};
+        fill: ${(props) => (props.mod === "dark" ? "#fff" : "#1E2025")};
     }
 
     & .filled_navItem > .sub { max-height: 100px; }
@@ -55,7 +55,7 @@ const NavItem = styled.div `
 
     margin: 15px 0;
     padding: 7px 20px;
-    border: 1px solid rgba(0, 0, 0, 0);
+    border: 3px solid rgba(0, 0, 0, 0);
     border-radius: 20px;
 
     cursor: pointer;
@@ -67,7 +67,7 @@ const NavItem = styled.div `
 
 const RightAngleIcon = styled.i `
     font-size: 1.4em;
-    color: ${(props) => (props.mod == "dark" ? "#fff" : "#1E2025")};
+    color: ${(props) => (props.mod === "dark" ? "#fff" : "#1E2025")};
 `
 
 const Sub = styled.div `

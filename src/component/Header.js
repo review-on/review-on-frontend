@@ -11,7 +11,7 @@ import MessageIcon from '../svg/MessageIcon';
 const Container = styled.header `
     width: 100%;
     height: 70px;
-    background-color: ${(props) => (props.mod == "dark" ? "#1E2025" : "#fff")};
+    background-color: ${(props) => (props.mod === "dark" ? "#1E2025" : "#fff")};
 
     position: fixed;
     z-index: 1000;
@@ -42,7 +42,7 @@ const Hamburger = styled.div `
         margin-left: auto;
 
         ${(props) => console.log(props.mod)}
-        border-top: 1px solid ${(props) => (props.mod == "dark" ? "#fff" : "#1E2025")};
+        border-top: 1px solid ${(props) => (props.mod === "dark" ? "#fff" : "#1E2025")};
     }
     
     & > *:first-child {
@@ -58,18 +58,18 @@ const SearchForm = styled.div `
 
 const SearchInput = styled.input`
     width: 450px;
-    background-color: ${(props) => (props.mod == "dark" ? "#1E2025" : "#fff")};
+    background-color: ${(props) => (props.mod === "dark" ? "#1E2025" : "#fff")};
 
     font-size: 0.8em;
-    color: ${(props) => (props.mod == "dark" ? "#d8d8d8" : "#1E2025")};
+    color: ${(props) => (props.mod === "dark" ? "#d8d8d8" : "#1E2025")};
 
     padding: 8px 50px;
-    border: 1px solid ${(props) => (props.mod == "dark" ? "#707070" : "#1E2025")};
+    border: 1px solid ${(props) => (props.mod === "dark" ? "#707070" : "#1E2025")};
     border-radius: 20px;
     outline: none;
 
     ::placeholder {
-        color: ${(props) => (props.mod == "dark" ? "#d8d8d8" : "#1E2025")} !important;
+        color: ${(props) => (props.mod === "dark" ? "#d8d8d8" : "#1E2025")} !important;
     }
 `
 
@@ -84,7 +84,7 @@ const Utility = styled.div `
     }
     
     & > svg path {
-       fill: ${(props) => (props.mod == "dark" ? "#fff" : "#1E2025")};
+       fill: ${(props) => (props.mod === "dark" ? "#fff" : "#1E2025")};
     }
 `
 
@@ -108,10 +108,10 @@ const ModButtonWrap = styled.div `
     }
     
     & > *:first-child {
-        opacity: ${(props) => (props.mod == "dark" ? "1" : "0")};
+        opacity: ${(props) => (props.mod === "dark" ? "1" : "0")};
     }
     & > *:last-child {
-        opacity: ${(props) => (props.mod == "dark" ? "0" : "1")};
+        opacity: ${(props) => (props.mod === "dark" ? "0" : "1")};
     }
 `
 
