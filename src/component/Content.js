@@ -7,12 +7,12 @@ import ReviewRank from './ReviewRank';
 import blackBackground from '../images/aosBackground.png';
 import whiteBackground from '../images/aosBackground2.png';
 
-const Container = styled.div`
-    width: calc(100vw - 250px);
+const Container = styled.div `
+    width: ${(props) => (props.status === "open" ? "calc(100vw - 250px)" : "100vw")};
     background-color: ${(props) => (props.mod === "dark" ? "#000" : "#fff")};
 
     position: relative;
-    left: 250px; top: 70px; 
+    left: ${(props) => (props.status === "open" ? "250px" : "0")}; top: 70px; 
 
     ::before, ::after {
         width: 100%; 
@@ -37,14 +37,48 @@ const Container = styled.div`
     }
 `
 
-const BackgroundImage = styled.div`
+const BackgroundImage = styled.div `
     width: 100%;
     height: 850px;
+
+    position: absolute;
 
     background-image: url(${props => props.mod === 'dark' ? blackBackground : whiteBackground});
     background-position: ${props => props.mod === 'dark' ? "center -100px" : ""};
     background-repeat: no-repeat;
     background-size: cover;
+`
+
+const BackgroundText = styled.div `
+    line-height: 60px;
+
+    position: absolute;
+    left: 10%; top: 200px;
+    z-index: 100;
+
+    & > span {
+        font-size: 3.5em;
+        font-weight: bold;
+        color: #fff !important;
+    }
+`
+
+const Section = styled.section `
+    width: 80%;
+
+    position: relative;
+    z-index: 300;
+
+    margin: 0 auto;
+    padding-top: 450px;
+`
+
+const FlexWrap = styled.div `
+    display: flex;
+    flex-wrap: wrap;
+    
+    margin-top: 1.5em;
+    padding-top: 3em;
 `
 
 const Content = (props) => {
@@ -58,20 +92,19 @@ const Content = (props) => {
     });
 
     return (
-        <Container mod={mod} className="visual">
+        <Container mod={mod} status={status} className="visual">
             <BackgroundImage mod={mod} />
-            <div className="content-filter"></div>
-            <div className="background-text bold fs-9">
+            <BackgroundText>
                 <span>AOS 세계로</span><br />
                 <span>탐험을 떠나자</span>
-            </div>
-            <div className="content">
+            </BackgroundText>
+            <Section>
                 <PopularPosts />
-                <div className="row pt-5 mt-4">
-                    <Multiplex />
-                    <ReviewRank />
-                </div>
-            </div>
+                <FlexWrap>
+                    <Multiplex mod={mod} />
+                    <ReviewRank mod={mod} />
+                </FlexWrap>
+            </Section>
         </ Container>
     )
 };
