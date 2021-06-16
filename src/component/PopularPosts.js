@@ -67,6 +67,8 @@ const Flex = styled.div `
     display: flex;
 
     & > p {
+        color: ${(props) => (props.mod === "dark" ? "#fff" : "#000")};
+
         margin-left: 1.5em;
     }
 
@@ -79,7 +81,7 @@ const Flex = styled.div `
 const ProfileImage = styled.div `
     width: 30px;
     height: 30px;
-    background-color: #fff;
+    background-color: ${(props) => (props.mod === "dark" ? "#fff" : "#1E2025")};
 
     border-radius: 50%;
 `
@@ -87,9 +89,9 @@ const ProfileImage = styled.div `
 const SubmitBtn = styled.div `
     width: 50px;
     height: 25px;
-    background-color: #fff;
+    background-color: ${(props) => (props.mod === "dark" ? "#fff" : "#1E2025")};
 
-    color: #333;
+    color: ${(props) => (props.mod === "dark" ? "#333" : "#fff")};
     text-align: center;
     line-height: 25px;
     font-size: 1.4em;
@@ -102,6 +104,7 @@ const SubmitBtn = styled.div `
 
 const PopularPosts = (props) => {
     const mod = props.mod;
+    console.log(mod)
 
     return(
         <Popular>
@@ -116,10 +119,10 @@ const PopularPosts = (props) => {
                         <p>안녕하세요</p>
                         <PopularContent>
                             <Flex mod={mod}>
-                                <ProfileImage></ProfileImage>
+                                <ProfileImage mod={mod}></ProfileImage>
                                 <p><span>황성철</span><br/>집가고싶다</p>
                             </Flex>
-                            <SubmitBtn>구독</SubmitBtn>
+                            <SubmitBtn mod={mod}>구독</SubmitBtn>
                         </PopularContent>
                     </PopularArea>
                 </Col3>
@@ -129,10 +132,10 @@ const PopularPosts = (props) => {
                         <p>안녕하세요</p>
                         <PopularContent>
                             <Flex mod={mod}>
-                                <ProfileImage></ProfileImage>
+                                <ProfileImage mod={mod}></ProfileImage>
                                 <p><span>김은아</span><br/>진짜 집 가 고 싶 다</p>
                             </Flex>
-                            <SubmitBtn>구독</SubmitBtn>
+                            <SubmitBtn mod={mod}>구독</SubmitBtn>
                         </PopularContent>
                     </PopularArea>
                 </Col3>
@@ -142,10 +145,10 @@ const PopularPosts = (props) => {
                         <p>안녕하세요</p>
                         <PopularContent>
                             <Flex mod={mod}>
-                                <ProfileImage></ProfileImage>
+                                <ProfileImage mod={mod}></ProfileImage>
                                 <p><span>황성철</span><br/>집가고싶다</p>
                             </Flex>
-                            <SubmitBtn>구독</SubmitBtn>
+                            <SubmitBtn mod={mod}>구독</SubmitBtn>
                         </PopularContent>
                     </PopularArea>
                 </Col3>
@@ -155,10 +158,10 @@ const PopularPosts = (props) => {
                         <p>안녕하세요</p>
                         <PopularContent>
                             <Flex mod={mod}>
-                                <ProfileImage></ProfileImage>
+                                <ProfileImage mod={mod}></ProfileImage>
                                 <p><span>김은아</span><br/>집가고싶다</p>
                             </Flex>
-                            <SubmitBtn>구독</SubmitBtn>
+                            <SubmitBtn mod={mod}>구독</SubmitBtn>
                         </PopularContent>
                     </PopularArea>
                 </Col3>

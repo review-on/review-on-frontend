@@ -8,7 +8,7 @@ import blackBackground from '../images/aosBackground.png';
 import whiteBackground from '../images/aosBackground2.png';
 
 const Container = styled.div `
-    width: ${(props) => (props.status === "open" ? "calc(100vw - 250px)" : "100vw")};
+    width: ${(props) => (props.status === "open" ? "calc(100% - 250px)" : "100%")};
     background-color: ${(props) => (props.mod === "dark" ? "#000" : "#fff")};
 
     position: relative;
@@ -86,6 +86,7 @@ const Content = (props) => {
     const status = props.status;
 
     useEffect(() => {
+        document.body.style.backgroundColor = "#1E2025"
         let visual = document.querySelector(".visual");
         visual.classList.remove("type_open", "type_close");
         visual.classList.add(`type_${status}`);
@@ -99,7 +100,7 @@ const Content = (props) => {
                 <span>탐험을 떠나자</span>
             </BackgroundText>
             <Section>
-                <PopularPosts />
+                <PopularPosts mod={mod} />
                 <FlexWrap>
                     <Multiplex mod={mod} />
                     <ReviewRank mod={mod} />

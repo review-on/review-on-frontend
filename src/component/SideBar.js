@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import HomeIcon from '../svg/HomeIcon';
 import GameIcon from '../svg/GameIcon';
+import MovieIcon from '../svg/MovieIcon';
+import BookIcon from '../svg/BookIcon';
+import FoodIcon from '../svg/FoodIcon';
+import MusicIcon from '../svg/MusicIcon';
+import UserIcon from '../svg/UserIcon';
+import LogoutIcon from '../svg/LogoutIcon';
+import OptionIcon from '../svg/OptionIcon';
 
 const Container = styled.aside `
     width: 250px;
@@ -60,7 +68,14 @@ const NavItem = styled.div `
     cursor: pointer;
 
     & > a {
-        margin: 0 30px;
+        margin-left: 30px;
+    }
+    & > a + i {
+        margin-left: 30px;
+    }
+
+    :last-child {
+        margin-top: 70px;
     }
 `
 
@@ -82,12 +97,16 @@ const Sub = styled.div `
     transform: translateX(-50%);
 
     overflow: hidden;
-`
 
-const SubItem = styled.a `
-    display: block; 
-    
-    padding: .3em 0;
+    & > a {
+        display: block; 
+        
+        padding: .3em 0;
+
+        :hover {
+            color: #E99A11;
+        }
+    }
 `
 
 const SideBar = (props) => {
@@ -129,51 +148,63 @@ const SideBar = (props) => {
                     <GameIcon />
                     <a href="/">게임</a>
                     <RightAngleIcon className="fa fa-angle-right" />
-                    <Sub className="sub">
-                        <SubItem href="/">RPG</ SubItem>
-                        <SubItem href="/">FPS</ SubItem>
-                        <SubItem href="/">AOS</ SubItem>
+                    <Sub mod={mod} className="sub">
+                        <Link to="/b">RPG</Link>
+                        <Link to="/b">FPS</Link>
+                        <Link to="/b">AOS</Link>
                     </Sub>
                 </NavItem>
                 <NavItem className="nav-item movie" onClick={() => select === "movie" ? setSelect("home") : setSelect("movie")}>
-                    <GameIcon />
+                    <MovieIcon />
                     <a href="/">영화</a>
                     <RightAngleIcon className="fa fa-angle-right" />
-                    <Sub className="sub">
-                        <SubItem href="/">RPG</ SubItem>
-                        <SubItem href="/">FPS</ SubItem>
-                        <SubItem href="/">AOS</ SubItem>
+                    <Sub mod={mod} className="sub">
+                        <Link to="/b">RPG</Link>
+                        <Link to="/b">FPS</Link>
+                        <Link to="/b">AOS</Link>
                     </Sub>
                 </NavItem>
                 <NavItem className="nav-item book" onClick={() => select === "book" ? setSelect("home") : setSelect("book")}>
-                    <GameIcon />
+                    <BookIcon />
                     <a href="/">독서</a>
                     <RightAngleIcon className="fa fa-angle-right" />
-                    <Sub className="sub">
-                        <SubItem href="/">RPG</ SubItem>
-                        <SubItem href="/">FPS</ SubItem>
-                        <SubItem href="/">AOS</ SubItem>
+                    <Sub mod={mod} className="sub">
+                        <Link to="/b">RPG</Link>
+                        <Link to="/b">FPS</Link>
+                        <Link to="/b">AOS</Link>
                     </Sub>
                 </NavItem>
                 <NavItem className="nav-item app" onClick={() => select === "app" ? setSelect("home") : setSelect("app")}>
-                    <GameIcon />
-                    <a href="/">앱</a>
+                    <FoodIcon />
+                    <a href="/">음식</a>
                     <RightAngleIcon className="fa fa-angle-right" />
-                    <Sub className="sub">
-                        <SubItem href="/">RPG</ SubItem>
-                        <SubItem href="/">FPS</ SubItem>
-                        <SubItem href="/">AOS</ SubItem>
+                    <Sub mod={mod} className="sub">
+                        <Link to="/b">RPG</Link>
+                        <Link to="/b">FPS</Link>
+                        <Link to="/b">AOS</Link>
                     </Sub>
                 </NavItem>
                 <NavItem className="nav-item webtoon" onClick={() => select === "webtoon" ? setSelect("home") : setSelect("webtoon")}>
-                    <GameIcon />
-                    <a href="/">웹툰</a>
+                    <MusicIcon />
+                    <a href="/">음악</a>
                     <RightAngleIcon className="fa fa-angle-right" />
-                    <Sub className="sub">
-                        <SubItem href="/">RPG</ SubItem>
-                        <SubItem href="/">FPS</ SubItem>
-                        <SubItem href="/">AOS</ SubItem>
+                    <Sub mod={mod} className="sub">
+                        <Link to="/b">RPG</Link>
+                        <Link to="/b">FPS</Link>
+                        <Link to="/b">AOS</Link>
                     </Sub>
+                </NavItem>
+                <NavItem>
+                    <UserIcon />
+                    <a href="/">내정보</a>
+                </NavItem>
+                <NavItem>
+                    <LogoutIcon />
+                    <a href="/">로그아웃</a>
+                </NavItem>
+                <NavItem>
+                    <OptionIcon />
+                    <a href="/">설정</a>
                 </NavItem>
             </Nav>
         </Container>
