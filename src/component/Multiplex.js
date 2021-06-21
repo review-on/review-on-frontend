@@ -47,7 +47,6 @@ const Col3 = styled.div `
 
 const Multiplex = (props) => {
     const mod = props.mod;
-    const status = props.status;
 
     return(
         <Multi mod={mod}>

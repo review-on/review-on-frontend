@@ -21,11 +21,15 @@ const Container = styled.aside `
     justify-content: center;
 
     position: fixed;
-    left: 0; top: 70px;
+    left: ${(props) => (props.status === "open" ? 0 : "-250px")}; top: 70px;
 
     padding-top: 50px;
 
     & a {
+        color: ${(props) => (props.mod === "dark" ? "#fff" : "#1E2025")};
+    }
+
+    & span {
         color: ${(props) => (props.mod === "dark" ? "#fff" : "#1E2025")};
     }
     
@@ -67,10 +71,10 @@ const NavItem = styled.div `
 
     cursor: pointer;
 
-    & > a {
+    & > span, & > a {
         margin-left: 30px;
     }
-    & > a + i {
+    & > span + i, & > a + i {
         margin-left: 30px;
     }
 
@@ -93,7 +97,7 @@ const Sub = styled.div `
 
     position: absolute;
     left: 50%; top: 120%;
-    transition: max-height 1s;
+    transition: 1s;
     transform: translateX(-50%);
 
     overflow: hidden;
@@ -110,14 +114,11 @@ const Sub = styled.div `
 `
 
 const SideBar = (props) => {
-    const [select, setSelect] = useState("home");
+    const [select, setSelect] = useState("game");
     const mod = props.mod; 
     const status = props.status; 
     
     useEffect(() => {
-        let aside = document.querySelector("aside");
-        status === "open" ? aside.style.left = "0" : aside.style.left = "-250px";
-
         document.querySelectorAll(".nav-item").forEach(navItem => {
             navItem.classList.remove("filled_navItem");
             navItem.classList.remove("border_navItem");
@@ -137,16 +138,16 @@ const SideBar = (props) => {
     });
     
     return(
-        <Container mod={mod}>
+        <Container mod={mod} status={status}>
             <Nav>
                 <NavItem className="nav-item home">
                     <HomeIcon />
-                    <a href="/">홈</a>
+                    <Link to="/">홈</Link>
                     <i className="sub"></i>
                 </NavItem>
-                <NavItem className="nav-item game" onClick={() => select === "game" ? setSelect("home") : setSelect("game")}>
+                <NavItem className="nav-item game" onFocus={() => select === "game" ? setSelect("game") : setSelect("game")}>
                     <GameIcon />
-                    <a href="/">게임</a>
+                    <span href="/">게임</span>
                     <RightAngleIcon className="fa fa-angle-right" />
                     <Sub mod={mod} className="sub">
                         <Link to="/b">RPG</Link>
@@ -154,9 +155,9 @@ const SideBar = (props) => {
                         <Link to="/b">AOS</Link>
                     </Sub>
                 </NavItem>
-                <NavItem className="nav-item movie" onClick={() => select === "movie" ? setSelect("home") : setSelect("movie")}>
+                <NavItem className="nav-item movie" onFocus={() => select === "movie" ? setSelect("game") : setSelect("movie")}>
                     <MovieIcon />
-                    <a href="/">영화</a>
+                    <span href="/">영화</span>
                     <RightAngleIcon className="fa fa-angle-right" />
                     <Sub mod={mod} className="sub">
                         <Link to="/b">RPG</Link>
@@ -164,9 +165,9 @@ const SideBar = (props) => {
                         <Link to="/b">AOS</Link>
                     </Sub>
                 </NavItem>
-                <NavItem className="nav-item book" onClick={() => select === "book" ? setSelect("home") : setSelect("book")}>
+                <NavItem className="nav-item book" onFocus={() => select === "book" ? setSelect("game") : setSelect("book")}>
                     <BookIcon />
-                    <a href="/">독서</a>
+                    <span href="/">독서</span>
                     <RightAngleIcon className="fa fa-angle-right" />
                     <Sub mod={mod} className="sub">
                         <Link to="/b">RPG</Link>
@@ -174,9 +175,9 @@ const SideBar = (props) => {
                         <Link to="/b">AOS</Link>
                     </Sub>
                 </NavItem>
-                <NavItem className="nav-item app" onClick={() => select === "app" ? setSelect("home") : setSelect("app")}>
+                <NavItem className="nav-item app" onFocus={() => select === "app" ? setSelect("game") : setSelect("app")}>
                     <FoodIcon />
-                    <a href="/">음식</a>
+                    <span href="/">음식</span>
                     <RightAngleIcon className="fa fa-angle-right" />
                     <Sub mod={mod} className="sub">
                         <Link to="/b">RPG</Link>
@@ -184,9 +185,9 @@ const SideBar = (props) => {
                         <Link to="/b">AOS</Link>
                     </Sub>
                 </NavItem>
-                <NavItem className="nav-item webtoon" onClick={() => select === "webtoon" ? setSelect("home") : setSelect("webtoon")}>
+                <NavItem className="nav-item webtoon" onFocus={() => select === "webtoon" ? setSelect("game") : setSelect("webtoon")}>
                     <MusicIcon />
-                    <a href="/">음악</a>
+                    <span href="/">음악</span>
                     <RightAngleIcon className="fa fa-angle-right" />
                     <Sub mod={mod} className="sub">
                         <Link to="/b">RPG</Link>
@@ -196,15 +197,15 @@ const SideBar = (props) => {
                 </NavItem>
                 <NavItem>
                     <UserIcon />
-                    <a href="/">내정보</a>
+                    <span href="/">내정보</span>
                 </NavItem>
                 <NavItem>
                     <LogoutIcon />
-                    <a href="/">로그아웃</a>
+                    <span href="/">로그아웃</span>
                 </NavItem>
                 <NavItem>
                     <OptionIcon />
-                    <a href="/">설정</a>
+                    <span href="/">설정</span>
                 </NavItem>
             </Nav>
         </Container>

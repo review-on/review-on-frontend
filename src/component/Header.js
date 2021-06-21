@@ -7,6 +7,7 @@ import SunIcon from '../svg/SunIcon';
 import MoonIcon from '../svg/MoonIcon';
 import BallIcon from '../svg/BallIcon';
 import MessageIcon from '../svg/MessageIcon';
+import Logo from '../svg/Logo';
 
 const Container = styled.header `
     width: 100%;
@@ -21,6 +22,19 @@ const Container = styled.header `
     align-items: center;
 
     padding: 0 40px;
+`
+
+const HeaderLeft = styled.div `
+    display: flex;
+    align-items: center;
+
+    & > svg { 
+        margin-left: 35px; 
+        margin-top: 2px;
+    }
+    & > svg tspan { 
+        fill: ${(props) => (props.mod === "dark" ? "#fff" : "#1E2025")};
+    }
 `
 
 const Hamburger = styled.div `
@@ -41,7 +55,6 @@ const Hamburger = styled.div `
         margin-top: calc(1.2em / 3);
         margin-left: auto;
 
-        ${(props) => console.log(props.mod)}
         border-top: 1px solid ${(props) => (props.mod === "dark" ? "#fff" : "#1E2025")};
     }
     
@@ -80,9 +93,7 @@ const Utility = styled.div `
 
     & > svg {
         margin-left: 25px;
-        
     }
-    
     & > svg path {
        fill: ${(props) => (props.mod === "dark" ? "#fff" : "#1E2025")};
     }
@@ -140,11 +151,14 @@ const Header = (props) => {
 
     return(
         <Container mod={mod}>
-            <Hamburger mod={mod} onClick={moveSideBar} >
-                <span></span>
-                <span></span>
-                <span></span>
-            </Hamburger>
+            <HeaderLeft mod={mod}>
+                <Hamburger mod={mod} onClick={moveSideBar} >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </Hamburger>
+                <Logo mod={mod}/>
+            </HeaderLeft>
             <SearchForm>
                 <SearchIcon  />  
                 <SearchInput mod={mod} type="text" placeholder="검색어를 입력해주세요" />
