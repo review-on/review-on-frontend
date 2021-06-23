@@ -12,7 +12,7 @@ export const Header = styled.header`
     position: fixed;
     z-index: 1000;
     
-    transition: background .5s;
+    transition: background-color .5s;
 
     padding: 0 40px;
 `
