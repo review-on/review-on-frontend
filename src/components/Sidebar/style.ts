@@ -1,106 +1,133 @@
 import styled from 'styled-components';
 
 interface props {
-    isOpen: string;
+  isOpen?: string
+  select?: number
 }
 
-export const Aside = styled.aside `
-    width: 250px;
-    height: 100vh;
-    background-color: ${props => props.theme.colors.bgColor1};
+export const Aside = styled.aside`
+  width: 250px;
+  height: 100vh;
+  background-color: ${props => props.theme.colors.bgColor1};
 
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    position: fixed;
-    left: ${({ isOpen }: props) => isOpen == "open" ? 0 : "-250px"}; top: 70px;
+  position: fixed;
+  left: ${({ isOpen }: props) => isOpen === "open" ? 0 : "-250px"}; top: 70px;
 
-    padding-top: 50px;
+  transition: left .5s, background-color .5s;
 
-    & a {
-        color: ${props => props.theme.colors.textColor};
-    }
+  padding-top: 50px;
 
-    & span {
-        color: ${props => props.theme.colors.textColor};
-    }
-    
-    & i {
-        color: ${props => props.theme.colors.textColor};
-    }
-
-    & .sub {
-        border-left: 3px solid ${props => props.theme.colors.textColor};
-    }
-
-    & svg path {
-        fill: ${props => props.theme.colors.textColor};
-    }
-
-    & .filled_navItem > .sub { max-height: 100px; }
-    & .border_navItem > .sub { max-height: 100px; }
-`
-
-export const Nav = styled.nav `
-    width: 190px; 
-    
-    font-size: 1.2em;
-
-    & .filled_navItem { background-color: #E99A11; }
-    & .border_navItem { border: 3px solid #E99A11; }
-`
-
-export const NavItem = styled.div `
-    display: flex;
-    align-items: center;
-
-    position: relative;
-
-    margin: 15px 0;
-    padding: 7px 20px;
-    border: 3px solid rgba(0, 0, 0, 0);
-    border-radius: 20px;
-
-    cursor: pointer;
-
-    & > span, & > a {
-        margin-left: 30px;
-    }
-    & > span + i, & > a + i {
-        margin-left: 30px;
-    }
-
-    :last-child {
-        margin-top: 70px;
-    }
-`
-
-export const RightAngleIcon = styled.i `
-    font-size: 1.4em;
+  & a {
     color: ${props => props.theme.colors.textColor};
+  }
+
+  & span {
+    color: ${props => props.theme.colors.textColor};
+  }
+  
+  & i {
+    color: ${props => props.theme.colors.textColor};
+  }
+
+  & .sub {
+    border-left: 3px solid ${props => props.theme.colors.textColor};
+  }
+
+  & svg path {
+    fill: ${props => props.theme.colors.textColor};
+  }
+
+  & nav > div:nth-child(${({ select }: props) => select}) {
+    background: ${props => props.theme.text === "dark" ? "#E99A11" : "none"};
+    border: 2px solid ${props => props.theme.text === "dark" ? 0 : "#E99A11"};
+
+    margin-bottom: 100px;
+  }
+
+  & nav > div:nth-child(${({ select }: props) => select}) > div {
+    max-height: 100px;
+
+    border-left: 3px solid ${props => props.theme.colors.textColor};
+  }
+
+  & nav > div:nth-child(${({ select }: props) => select}) svg {
+    transform: rotate(0) !important;
+  }
+
 `
 
-export const Sub = styled.div `
-    width: 65%;
-    max-height: 0;
+export const Nav = styled.nav`
+  width: 190px; 
+  
+  font-size: 1.2em;
+`
 
-    font-size: .8em;
-    text-align: center;
+export const NavItem = styled.div`
+  display: flex;
+  align-items: center;
 
-    position: absolute;
-    left: 50%; top: 120%;
+  position: relative;
+
+  transition: 1s;
+
+  margin: 15px 0;
+  padding: 7px 20px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 20px;
+
+  cursor: pointer;
+  
+  & > a {
+    margin-left: 30px;
+  }
+  & > a + i {
+    margin-left: 30px;
+  }
+
+  :last-child {
+    margin-top: 70px;
+  }
+`
+
+export const NavItemText = styled.span`
+  transition: 1s;
+  
+  margin-left: 25px;
+  
+  & + svg {
+    margin-left: 25px;
+
     transition: 1s;
-    transform: translateX(-50%);
+    transform: rotate(-90deg);
+  }
+`
 
-    overflow: hidden;
+export const Sub = styled.div`
+  width: 65%;
+  max-height: 0;
 
-    & > a {
-        display: block; 
-        
-        padding: .3em 0;
+  font-size: .8em;
+  text-align: center;
 
-        :hover {
-            color: #E99A11;
-        }
+  position: absolute;
+  left: 50%; top: 120%;
+  transition: 1s;
+  transform: translateX(-50%);
+
+  border-left: 3px solid rgba(0, 0, 0, 0);
+
+  overflow: hidden;
+
+  & > a {
+    display: block; 
+    
+    padding: .3em 0;
+
+    :hover {
+        color: #E99A11;
     }
+  }
 `
