@@ -1,25 +1,24 @@
 import React, { useState } from 'react';
 
-import { Header } from "../../component";
+import { Header, Sidebar } from "../../components";
 
 import {dark, light} from "../../theme"; // 환경별 테마 정보 가져오기
 import { ThemeProvider } from 'styled-components';
-import { useEffect } from 'react';
 
 const MainPage: React.FC = () => {
   const [themeMode, setThemeMode] = useState('dark'); 
+  const [isOpen, setisOpen] = useState("open");
+
   const theme = themeMode === 'light' ? light : dark; 
   
   const changeTheme = () => setThemeMode(themeMode === 'light' ? 'dark' : 'light');
-
-  useEffect(() => {
-    console.log(theme);
-  })
+  const changeStatus = () => setisOpen(isOpen === 'open' ? 'close' : 'open');
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <Header changeTheme={changeTheme}></Header>
+      <ThemeProvider theme={theme} >
+        <Header changeTheme={changeTheme} changeStatus={changeStatus} ></Header>
+        <Sidebar changeTheme={changeTheme} isOpen={isOpen}></Sidebar>
       </ThemeProvider>
     </>
   );
