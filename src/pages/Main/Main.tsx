@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Header, Sidebar } from "../../components";
 
-import {dark, light} from "../../theme"; // 환경별 테마 정보 가져오기
+import { dark, light } from "../../theme"; 
 import { ThemeProvider } from 'styled-components';
 
 const MainPage: React.FC = () => {
