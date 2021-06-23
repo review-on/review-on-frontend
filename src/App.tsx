@@ -3,13 +3,9 @@ import { BrowserRouter } from 'react-router-dom';
 import Router from "./router";
 import { GlobalStyle } from './GlobalStyle';
 import { ToastContainer } from 'react-toastify';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 
-const App = () => {
-  const dispatch = useDispatch();
-
-  // useEffect(() => {
-  // })
+const App:React.FC = () => {
 
   return(
     <BrowserRouter>
