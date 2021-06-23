@@ -11,12 +11,12 @@ import {
 import * as S from './style';
 
 interface Props {
-  imgRef: React.MutableRefObject<any>;
 }
 
-const Todo: React.FC<Props> = () => {
+const Header: React.FC<Props> = () => {
   return (
+    <button>sad</button>
   );
 };
 
-export default Todo;
+export default Header;
