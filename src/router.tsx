@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import {
-  MainContainer,
-} from './containers';
+  MainPage,
+} from './pages';
 
 
 const Router: React.FC = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={MainContainer} exact/>
+        <Route path="/" component={MainPage} exact/>
       </Switch>
     </BrowserRouter>
   );

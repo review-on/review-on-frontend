@@ -3,7 +3,7 @@ import React from 'react';
 
 interface Props { }
 
-const MainContainer: React.FC<Props> = () => {
+const MainPage: React.FC<Props> = () => {
   return (
       <>
         asd
@@ -11,4 +11,4 @@ const MainContainer: React.FC<Props> = () => {
   );
 };
 
-export default MainContainer;
+export default MainPage;
