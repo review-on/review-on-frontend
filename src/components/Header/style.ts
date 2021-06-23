@@ -127,10 +127,10 @@ export const ModButtonWrap = styled.div`
     }
 
     & > *:first-child {
-        opacity: ${props => props.theme.colors.sunOpacity};
+        opacity: ${props => props.theme.colors.opacityType1};
     }
     & > *:last-child {
-        opacity: ${props => props.theme.colors.moonOpacity};
+        opacity: ${props => props.theme.colors.opacityType2};
     }
 `
 

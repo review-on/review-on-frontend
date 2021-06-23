@@ -15,16 +15,11 @@ import {
 import * as S from './style';
 
 interface Props {
-  changeTheme: () => void,
   isOpen: string;
 }
 
 const Sidebar: React.FC<Props> = (props) => {
   const [select, setSelect] = useState(2);
-
-  useState(() => {
-    console.log(select);
-  })
 
   return (
     <S.Aside isOpen={props.isOpen} select={select} >
