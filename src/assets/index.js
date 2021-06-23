@@ -13,6 +13,7 @@ import SearchIcon from './Icon/SearchIcon';
 import SunIcon from './Icon/SunIcon';
 import UserIcon from './Icon/UserIcon';
 import BallIcon from './Icon/BallIcon';
+import RightAngleIcon from './Icon/RightAngleIcon';
 
 export {
     BookIcon,
@@ -29,5 +30,6 @@ export {
     SearchIcon,
     SunIcon,
     UserIcon,
-    BallIcon
+    BallIcon,
+    RightAngleIcon
 };
