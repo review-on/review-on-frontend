@@ -11,14 +11,15 @@ import {
 import * as S from './style';
 
 interface Props {
-  changeTheme: () => void
+  changeTheme: () => void,
+  changeStatus: () => void
 }
 
 const Header: React.FC<Props> = (props) => {
   return (
     <S.Header>
       <S.HeaderLeft>
-        <S.Hamburger>
+        <S.Hamburger onClick={props.changeStatus}>
           <S.HamburgerLne />
           <S.HamburgerLne />
           <S.HamburgerLne />
