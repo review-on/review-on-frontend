@@ -12,6 +12,7 @@ import OptionIcon from './icon/OptionIcon.svg';
 import SearchIcon from './icon/SearchIcon.svg';
 import SunIcon from './icon/SunIcon.svg';
 import UserIcon from './icon/UserIcon.svg';
+import BallIcon from './icon/BallIcon.svg';
 
 export {
     BookIcon,
@@ -27,5 +28,6 @@ export {
     OptionIcon,
     SearchIcon,
     SunIcon,
-    UserIcon
+    UserIcon,
+    BallIcon
 };
