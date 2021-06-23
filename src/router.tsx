@@ -4,7 +4,6 @@ import {
   MainPage,
 } from './pages';
 
-
 const Router: React.FC = () => {
   return (
     <BrowserRouter>

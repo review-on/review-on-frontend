@@ -1,8 +1,7 @@
 import React from 'react';
-// import { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { GlobalStyle } from './GlobalStyle';
 import Router from "./router";
+import { GlobalStyle } from './GlobalStyle';
 import { ToastContainer } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 
