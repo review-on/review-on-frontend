@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect } from 'react';
 // import { Link } from 'react-router-dom';
 import {
   SearchIcon,
@@ -16,9 +15,6 @@ interface Props {
 }
 
 const Header: React.FC<Props> = (props) => {
-  useEffect(() => {
-    console.log()
-  })
   return (
     <S.Header>
       <S.HeaderLeft>
