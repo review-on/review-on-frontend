@@ -20,9 +20,9 @@ const Header: React.FC<Props> = (props) => {
     <S.Header>
       <S.HeaderLeft>
         <S.Hamburger onClick={props.changeStatus}>
-          <S.HamburgerLne />
-          <S.HamburgerLne />
-          <S.HamburgerLne />
+          <S.HamburgerLine />
+          <S.HamburgerLine />
+          <S.HamburgerLine />
         </S.Hamburger>
         <Logo />
       </S.HeaderLeft>

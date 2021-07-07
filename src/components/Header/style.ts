@@ -41,7 +41,7 @@ export const Hamburger = styled.div`
     cursor: pointer;
 
 `
-export const HamburgerLne = styled.span`
+export const HamburgerLine = styled.span`
     width: 1.4em;
 
     display: block;
