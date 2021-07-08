@@ -1,7 +1,12 @@
-import styled from 'styled-components';
+import styled, { ThemeProps } from 'styled-components';
 
 interface props {
   isOpen?: string
+  image?: object
+}
+
+interface background {
+  image: string[]
 }
 
 export const Content = styled.div`
@@ -11,25 +16,51 @@ export const Content = styled.div`
   position: relative;
   left: ${({ isOpen }: props) => isOpen === "open" ? "250px" : "0"}; top: 70px; 
 
-  ::before, ::after {
-    width: 100%; 
-    height: 200px;
+  transition: 1s;
+`
+
+export const BackgroundImage = styled.div<ThemeProps<unknown> & background>`
+    width: 100%;
+    height: 850px;
 
     position: absolute;
-    left: 0; top: 650px;
+
+    transition: 1s;
+
+    background-image: url(${props => props.theme.text === 'dark' ? props.image[0] : props.image[1]});
+    background-position: ${props => props.theme.text === 'dark' ? "center -100px" : ""};
+    background-repeat: no-repeat;
+    background-size: cover;
+`
+
+export const BackgroundText = styled.div `
+    line-height: 60px;
+
+    position: absolute;
+    left: 10%; top: 200px;
     z-index: 100;
-    transition: opacity 1s ease-out !important;
 
-    content: '';
-  }
+    & > span {
+        font-size: 3.5em;
+        font-weight: bold;
+        color: #fff !important;
+    }
+`
 
-  ::before {
-    opacity: ${props => props.theme.colors.opacityType1};
-    background: linear-gradient(to bottom, rgba(51, 51, 51, 0) 0%, rgb(0, 0, 0) 100%);
-  }
+export const Section = styled.section `
+    width: 80%;
 
-  ::after {
-    opacity: ${props => props.theme.colors.opacityType2};
-    background: linear-gradient(to bottom, rgba(139, 139, 139, 0) 0%, rgb(255, 255, 255) 100%);
-  }
+    position: relative;
+    z-index: 300;
+
+    margin: 0 auto;
+    padding-top: 450px;
+`
+
+export const FlexWrap = styled.div `
+    display: flex;
+    flex-wrap: wrap;
+    
+    margin-top: 1.5em;
+    padding-top: 3em;
 `
