@@ -16,7 +16,7 @@ export const Aside = styled.aside`
   position: fixed;
   left: ${({ isOpen }: props) => isOpen === "open" ? 0 : "-250px"}; top: 70px;
 
-  transition: left .5s, background-color .5s;
+  transition: left 1s, background-color 1s;
 
   padding-top: 50px;
 
