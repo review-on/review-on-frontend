@@ -21,7 +21,7 @@ export const Content = styled.div`
 
 export const BackgroundImage = styled.div<ThemeProps<unknown> & background>`
     width: 100%;
-    height: 850px;
+    height: 90vh;
 
     position: absolute;
 
@@ -54,7 +54,7 @@ export const Section = styled.section `
     z-index: 300;
 
     margin: 0 auto;
-    padding-top: 450px;
+    padding-top: 500px;
 `
 
 export const FlexWrap = styled.div `

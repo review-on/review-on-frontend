@@ -1,5 +1,7 @@
 import React from 'react';
 import PopularPosts from "./PopularPosts/PopularPosts";
+import MultiFlex from "./MultiFlex/MultiFlex";
+import ReviewRank from "./ReviewRank/ReviewRank";
 import * as S from './style';
 import aosBackground1 from "../../assets/Images/aosBackground.png";
 import aosBackground2 from "../../assets/Images/aosBackground2.png";
@@ -23,7 +25,8 @@ const Content: React.FC<Props> = (props) => {
           <S.Section>
             <PopularPosts />
             <S.FlexWrap>
-
+              <MultiFlex />
+              <ReviewRank />
             </S.FlexWrap>
           </S.Section>
       </S.Content>
