@@ -7,7 +7,7 @@ const PopularPosts: React.FC = () => {
   return (
     <S.Popular>
       <S.TitleArea>
-        <h5>추천하는 글</h5>
+        <h2>추천하는 글</h2>
         <Link to="/b">더보기</Link>
       </S.TitleArea>
       <S.FlexWrap>
